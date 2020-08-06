@@ -1,50 +1,17 @@
-// const person: {
-// 	name: string;
-// 	age: number;
-// } = {
-// const person: {
-// 	name: string;
-// 	age: number;
-// 	hobbies: string[];
-// 	role: [number, string];
-// } = {
-// 	name: 'Krzysztof',
-// 	age: 44,
-// 	hobbies: ['Sport', 'Gotowanie'],
-// 	role: [2, 'autor'],
-// };
+const combine = (input1: number | string, input2: number | string) => {
+	let result;
 
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
+	if (typeof input1 === 'number' && typeof input2 === 'number') {
+		result = input1 + input2;
+	} else {
+		result = input1.toString() + input2.toString();
+	}
 
-enum Role {
-	ADMIN = 'ADMIN',
-	READ_ONLY = 100,
-	AUTHOR = 'AUTHOR',
-}
-
-const person = {
-	name: 'Krzysztof',
-	age: 44,
-	hobbies: ['Sport', 'Gotowanie'],
-	role: Role.ADMIN,
+	return result;
 };
 
-// person.role.push('admin');
-// person.role[1] = 10;
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
 
-// person.role = [0, 'admin', 'user'];
-
-let favoriteActivities: string[];
-favoriteActivities = ['Sport'];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-	console.log(hobby.toUpperCase());
-}
-
-if (person.role === Role.AUTHOR) {
-	console.log('is admin');
-}
+const combinedNames = combine('Krzysiek', 'Anna');
+console.log(combinedNames);
