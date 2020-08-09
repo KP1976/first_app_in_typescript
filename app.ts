@@ -6,3 +6,10 @@ userInput = "Krzysiek";
 if (typeof userInput === "string") {
   userName = userInput;
 }
+
+const generateErrors = (message: string, code: number) => {
+  throw { message, errorCode: code };
+};
+
+const result = generateErrors("Pojawił się błąd", 500);
+console.log(result);
